@@ -1,0 +1,73 @@
+
+loadModel(Modelica);
+getErrorString();
+
+loadFile("../../MLibrary/package.mo");
+getErrorString();
+
+loadFile("random_value.mo");
+getErrorString();
+
+loadFile("random_distribution.mo");
+getErrorString();
+
+loadFile("connectors.mo");
+getErrorString();
+
+loadFile("gomp.mo");
+getErrorString();
+
+loadFile("studente.mo");
+getErrorString();
+
+loadFile("aula.mo");
+getErrorString();
+
+loadFile("prodigit.mo");
+getErrorString();
+
+loadFile("monitor.mo");
+getErrorString();
+
+loadFile("monitor2.mo");
+getErrorString();
+
+loadFile("system.mo");
+getErrorString();
+
+simulate(System, stopTime=2000, method="rungekutta");
+getErrorString();
+
+//plot({fifo.x}, externalWindow=true);
+//getErrorString();
+
+//plot({fifo.u}, externalWindow=true);
+//getErrorString();
+
+// long
+plot({
+	//stud.pre_in, 
+	//stud.pre_out, 
+	
+	//aula.statoAula, 
+	
+	//gomp.gompDown, 
+	//gomp.prenotatiOut,
+	gomp.prenotati,
+	//gomp.nuoviPrenotati, 
+	//gomp.aulaAgibile,
+	
+	//prodigit.pre_in, 
+	//prodigit.pre_out,
+	//prodigit.prenotatiIn,
+	//prodigit.prenotatiOut,
+	prodigit.prenotati,
+	//prodigit.nuoviPrenotati,
+	//prodigit.prodigitDown,
+	//prodigit.prenotati
+	monitor2.segnale,
+	monitor.signal
+	
+}, externalWindow=true);
+
+getErrorString();
